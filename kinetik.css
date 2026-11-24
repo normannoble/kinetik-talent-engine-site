@@ -1,14 +1,91 @@
-/* Kinetik branding over the Talent Engine site (#44). Loaded after site.css. */
-:root{--blue:#033791;--kt-navy:#022a6e;--kt-sky:#1ea7ec;--p1:#e6f5fd}
-.btn{box-shadow:0 10px 24px -10px rgba(3,55,145,.55)}
-.logo.kt{gap:9px}
-.logo.kt img{width:28px;height:28px;display:block}
-.logo.kt .lt{color:var(--kt-navy)}
-.logo.kt .pw{font:500 12px/1 var(--sans);letter-spacing:0;color:var(--soft);padding-left:10px;margin-left:2px;border-left:1px solid var(--line)}
+/* Kinetik skin over the Talent Engine site (#44). Loaded after site.css.
+   Kinetik system (letsgokinetik.com, 2026-11-24): Montserrat; near-black #1a1717 and white bands;
+   navy #033791 -> sky #009de9 gradient on buttons and rules; white rounded cards on dark;
+   a short gradient rule under headings. The Talent Engine story structure is unchanged. */
+:root{
+  --kt-ink:#1a1717; --kt-navy:#033791; --kt-sky:#009de9; --kt-indigo:#4d5ba8; --kt-yellow:#fdb81e;
+  --kt-grad:linear-gradient(90deg,#033791 0%,#009de9 100%);
+  --display:"Montserrat",system-ui,sans-serif; --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg:#fff; --ink:#1a1717; --soft:#5f6570; --line:#e4e8ed; --blue:#033791;
+  --c1:#033791; --c2:#009de9; --c3:#4d5ba8; --c4:#fdb81e; --c5:#e5484d;
+  --p1:#eaf6fd; --p2:#f4f7fb; --p3:#eef3fb; --p4:#f6f9fc; --p5:#e9f1fb; --p6:#f2f8fd;
+}
+body{font-size:16px}
+h1,h2,h3{letter-spacing:-.015em;line-height:1.1}
+.hero h1,.problem h2,.question h2,.step h2,.change h2,.offer h2,.close h2{font-weight:700}
+
+/* heading rule */
+.hero h1::after,.problem h2::after,.question h2::after,.step h2::after,.change h2::after,.offer h2::after,.close h2::after,
+.six-sec h2::after,.flow-sec h2::after,.why h2::after{content:"";display:block;width:64px;height:4px;border-radius:2px;background:var(--kt-grad);margin-top:22px}
+.question h2::after,.close h2::after{margin-left:auto;margin-right:auto}
+
+/* header */
+.logo.kt{gap:12px}
+.logo.kt img.wm{height:24px;width:auto;display:block}
+.logo.kt .pw{font:500 12px/1 var(--sans);color:var(--soft);padding-left:12px;border-left:1px solid var(--line)}
 .logo.kt .pw b{font-weight:600;color:var(--ink)}
-.kt-close .av{background:var(--kt-navy)}
+.bar{background:rgba(255,255,255,.94)}
+.bar nav{font-weight:500}
+.bar nav a.here{color:var(--kt-navy);font-weight:600}
+.pill-btn{background:var(--kt-grad);border:0;color:#fff!important;text-transform:uppercase;font:700 12px/1 var(--sans);letter-spacing:.05em;padding:11px 16px;border-radius:8px}
+
+/* buttons */
+.btn{background:var(--kt-grad);border-radius:8px;text-transform:uppercase;font:700 14px/1 var(--sans);letter-spacing:.05em;padding:18px 26px;box-shadow:0 12px 26px -12px rgba(0,157,233,.6)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
+
+/* dark heroes */
+.hero,.hero.cr,.hero.pf,.hero.hw{background:
+  radial-gradient(60% 70% at 85% 30%,rgba(0,157,233,.28),transparent 70%),
+  radial-gradient(50% 60% at 65% 90%,rgba(3,55,145,.55),transparent 70%),
+  var(--kt-ink);color:#fff}
+.hero h1{font-size:clamp(40px,5.2vw,76px)}
+.hero .h1-home{font-size:clamp(40px,4.3vw,68px)}
+.hero h1 span,.hero h1 .blue{color:transparent!important;background:linear-gradient(90deg,#3fb7f5,#009de9);-webkit-background-clip:text;background-clip:text}
+.hero .lines{color:#c7cdd8}
+.hero .btn.ghost{color:#fff;border-color:rgba(255,255,255,.35)}
+.hero .ring{border-color:rgba(0,157,233,.28)}
+.hero .tile{background:#fff!important;box-shadow:0 30px 60px -28px rgba(0,0,0,.7)}
+.hero .core{box-shadow:0 40px 80px -30px rgba(0,0,0,.8)}
+.hero .qn{background:#fff!important;color:var(--kt-ink)}
+.hero .tile,.hero .core{color:var(--kt-ink)}
+.hero .qn::before{background:rgba(0,157,233,.35)}
+.hero .note{color:#7fd0f7}
+.hero .spark{color:var(--kt-sky)}
+
+/* story bands: Kinetik light blues, cards white */
+.problem,.change{background:#fff}
+.question{background:#f3f3f3}
+.offer{background:var(--p1)}
+.steps3 li{border-radius:14px;border:1px solid var(--line);box-shadow:0 20px 40px -32px rgba(3,55,145,.45)}
+.win{border-radius:14px}
+.mockcol .note,.question .note{color:var(--kt-navy)}
+.cross a,.more{color:var(--kt-navy)}
+
+/* dark close, like Kinetik's dark bands */
+.close{background:radial-gradient(50% 60% at 50% 0%,rgba(0,157,233,.22),transparent 70%),var(--kt-ink);color:#fff}
+.close p{color:#c7cdd8}
+.close .cross a{color:#7fd0f7}
+.close .chipf{background:#fff!important;color:var(--kt-navy)!important;box-shadow:0 12px 30px -16px rgba(0,0,0,.6)}
+.close .byline{background:#fff;border:0;color:var(--ink)}
+footer{background:var(--kt-ink);color:#9aa3b2;padding:34px 0 40px;margin:0}
+
+/* Kinetik close card */
+.kt-close .av{background:var(--kt-ink)}
 .kt-close .av::after{content:none}
 .kt-close .av img{width:30px;height:30px}
-.kt-close a{color:var(--blue);font-weight:600;text-decoration:none;white-space:nowrap}
-.hero .ring{border-color:#bfe3f7}
+.kt-close a{color:var(--kt-navy);font-weight:600;text-decoration:none;white-space:nowrap}
+
 @media (max-width:960px){.logo.kt .pw{display:none}}
+@media (max-width:560px){.logo.kt img.wm{height:18px}.btn{font-size:13px}.bar nav{gap:9px;font-size:12px;letter-spacing:-.01em}}
+@media (max-width:360px){.logo.kt img.wm{height:14px}.bar nav{gap:7px;font-size:11px}}
+.close h2 span{color:transparent!important;background:linear-gradient(90deg,#3fb7f5,#009de9);-webkit-background-clip:text;background-clip:text}
+.close .byline p{color:var(--soft)}
+.close .byline p b{color:var(--ink)}
+/* Montserrat runs wider than Inter Tight: scale hero headlines per page */
+.hero h1,.hero.cr h1{font-size:clamp(38px,4.6vw,66px)}
+.hero.pf h1{font-size:clamp(36px,4vw,58px)}
+.hero.hw h1{font-size:clamp(38px,4.4vw,64px)}
+.hero .h1-home{font-size:clamp(38px,4.3vw,64px)}
+.hero .lines br{display:none}
+.hero .lines{max-width:30em}
+.btn{font-size:13px;padding:17px 22px}
